@@ -3,10 +3,7 @@
 
 function createMenu(options){
 
-    function newIcon(iconClass){
-        return $('<span/>').addClass('ui-icon ' + iconClass);
-    }
-
+   
     // SET UP THE FLOATING DIV
     var baseCSS  = { 
         "background"  : "none",
@@ -45,7 +42,6 @@ function createMenu(options){
     $.each(options.items, function (i, itemConfig) {
         var $item = $('<li/>').attr('id', 'tamperMenuItem' + i);
         $item.text(itemConfig.menuText);
-        $item.prepend(newIcon(itemConfig.iconClass));
         $item.click(itemConfig.onClick);
         $menu.append($item);
         items.push($item);
@@ -53,7 +49,6 @@ function createMenu(options){
     
     //INITIALIZE
     $close.text('close')
-    .prepend(newIcon('ui-icon-arrowthick-1-nw'))
     .click(function(){
         $base.toggleClass('expanded'); 
     });
