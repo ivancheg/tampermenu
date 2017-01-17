@@ -4,7 +4,7 @@
 function createMenu(options){
 
     function newIcon(iconClass){
-        return $('<span/>').addClass('ui-icon ' + iconClass);
+        return $('<span/>').addClass('icon ' + iconClass);
     }
 
     // SET UP THE FLOATING DIV
