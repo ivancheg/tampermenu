@@ -11,11 +11,7 @@ function createMenu(options){
         "position"    : "fixed"
     };
 
-    //ITEM CSS
-      var itemCSS  = { 
-        "padding-left"  : "2em"
-    };		
-
+   
     // BASE ITEMS
     var $base = $('<div/>').attr('id','tamperBase').css(baseCSS);
     var $menu = $('<ul/>').attr('id','tamperMenu');
@@ -46,7 +42,7 @@ function createMenu(options){
     var items = [];
     //CUSTOM ITEMS
     $.each(options.items, function (i, itemConfig) {
-        var $item = $('<li/>').attr('id', 'tamperMenuItem' + i).css(itemCSS);
+        var $item = $('<li/>').attr('id', 'tamperMenuItem' + i);
         $item.text(itemConfig.menuText);
         $item.click(itemConfig.onClick);
         $menu.append($item);
