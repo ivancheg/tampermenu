@@ -11,6 +11,11 @@ function createMenu(options){
         "position"    : "fixed"
     };
 
+    //ITEM CSS
+      var itemCSS  = { 
+        "padding-left"  : "2em"
+    };		
+
     // BASE ITEMS
     var $base = $('<div/>').attr('id','tamperBase').css(baseCSS);
     var $menu = $('<ul/>').attr('id','tamperMenu');
@@ -23,7 +28,7 @@ function createMenu(options){
     globalCSS += "#tamperBase.expanded #tamperExpander{ display:none}";
     globalCSS += "#tamperBase:not(.expanded) #tamperMenu{ display:none}";
     globalCSS += "#tamperBase:not(.expanded) #tamperExpander{ display:block}";
-    globalCSS += ".ui-menu-item { padding-left: 2em}";
+    globalCSS += ".ui-menu-item {padding-left: 2em}";
 
 
     GM_addStyle(globalCSS);
@@ -41,7 +46,7 @@ function createMenu(options){
     var items = [];
     //CUSTOM ITEMS
     $.each(options.items, function (i, itemConfig) {
-        var $item = $('<li/>').attr('id', 'tamperMenuItem' + i);
+        var $item = $('<li/>').attr('id', 'tamperMenuItem' + i).css(itemCSS);
         $item.text(itemConfig.menuText);
         $item.click(itemConfig.onClick);
         $menu.append($item);
