@@ -23,6 +23,8 @@ function createMenu(options){
     globalCSS += "#tamperBase.expanded #tamperExpander{ display:none}";
     globalCSS += "#tamperBase:not(.expanded) #tamperMenu{ display:none}";
     globalCSS += "#tamperBase:not(.expanded) #tamperExpander{ display:block}";
+    globalCSS += ".ui-menu-item { padding-left: 2em}";
+
 
     GM_addStyle(globalCSS);
 
